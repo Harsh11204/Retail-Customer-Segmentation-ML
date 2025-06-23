@@ -52,12 +52,10 @@ elif option == "Behavior-Based Filtering":
 
 elif option == "Predict Single Customer":
     st.header("🧍 Predict Single Customer Cluster")
-    gender = st.selectbox("Gender", ["Male", "Female"])
     income = st.number_input("Annual Income (k$)", 0, 150, 50)
     spending = st.number_input("Spending Score (1-100)", 0, 100, 50)
     if st.button("Predict Cluster"):
-        gender_num = 1 if gender == "Male" else 0
-        features = scaler.transform([[gender_num, income, spending]])
+        features = scaler.transform([[income, spending]]) 
         cluster = model.predict(features)[0]
         behavior = get_behavior_label(income, spending)
         st.success(f"Predicted Cluster: {cluster} ({behavior})")

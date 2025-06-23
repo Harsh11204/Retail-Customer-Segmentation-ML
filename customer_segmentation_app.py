@@ -6,8 +6,8 @@ import pickle
 import matplotlib.pyplot as plt
 
 # Load trained model and scaler
-model = pickle.load(open('model/kmeans_model.pkl', 'rb'))
-scaler = pickle.load(open('model/scaler.pkl', 'rb'))
+model = pickle.load(open('kmeans_model.pkl', 'rb'))
+scaler = pickle.load(open('scaler.pkl', 'rb'))
 
 # Behavior labeling function
 def get_behavior_label(income, spending):

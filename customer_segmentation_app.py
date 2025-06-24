@@ -67,7 +67,7 @@ with tab2:
     if uploaded_file:
         df = pd.read_csv(uploaded_file)
         if 'Behavior' not in df.columns:
-            st.warning("⚠️ Please use the 'Dataset Summary + Predict' tab first to generate the 'Behavior' column.")
+            st.warning("⚠️Please use the Predicted Dataset with 'Behaviour' and 'Cluster' columns generated in the 'Dataset Summary + Predict' tab")
         else:
             behavior = st.selectbox("Select Behavior Type:", df['Behavior'].unique())
             st.dataframe(df[df['Behavior'] == behavior])
